@@ -5,7 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import './assets/styles/App.sass';
 import Home, { navLinks } from './components/Home';
 
-const eggIcon = require('./assets/images/egg.svg');
+const logo = require('./assets/images/track2.svg');
 
 const App = () => (
   <div className="App">
@@ -14,9 +14,9 @@ const App = () => (
         <Navbar.Brand>
           <Link to="/">
             <img
-              src={eggIcon}
+              src={logo}
               alt="egg"
-              style={{ display: 'inline', marginRight: '5px', width: '20px' }}
+              style={{ display: 'inline', marginRight: '5px', width: '40px' }}
             />
             Tracker
           </Link>
