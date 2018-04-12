@@ -1,0 +1,39 @@
+// Colors
+
+$yellow: #eecd32;
+
+$white: #ffffff;
+
+$blue: #377abc;
+
+$red: #d72233;
+
+$grey: #ebebeb;
+
+$darkgrey: #484848;
+
+$clear: rgba(0, 0, 0, 0);
+
+$transdarkgrey: rgba(72, 72, 72, 0.95);
+
+// Breakpoints
+
+$screenxs: 480px;
+$screensm: 768px;
+$screenmd: 992px;
+$screenlg: 1200px;
+
+:export {
+  blue: $blue;
+  red: $red;
+  white: $white;
+  yellow: $yellow;
+  clear: $clear;
+  grey: $grey;
+  darkgrey: $darkgrey;
+  transdarkgrey: $transdarkgrey;
+  screenxs: $screenxs;
+  screensm: $screensm;
+  screenmd: $screenmd;
+  screenlg: $screenlg;
+}

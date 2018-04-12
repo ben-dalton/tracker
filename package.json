@@ -1,0 +1,42 @@
+{
+  "name": "tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap-sass": "^3.3.7",
+    "core-js": "^2.5.3",
+    "lodash": "^4.17.5",
+    "node-sass": "^4.8.3",
+    "node-sass-chokidar": "^1.2.0",
+    "npm-run-all": "^4.1.2",
+    "prop-types": "^15.6.1",
+    "raf": "^3.4.0",
+    "react": "^16.3.1",
+    "react-app-rewire-css-modules": "codebandits/react-app-rewire-css-modules",
+    "react-app-rewired": "^1.5.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.3.1",
+    "react-icons-kit": "^1.0.7",
+    "react-redux": "^5.0.7",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "redux": "^3.7.2",
+    "sass-loader": "^6.0.7",
+    "styled-components": "^3.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
