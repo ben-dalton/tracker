@@ -3,8 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import './assets/styles/App.sass';
-
-import Home from './components/Home';
+import Home, { navLinks } from './components/Home';
 
 const eggIcon = require('./assets/images/egg.svg');
 
@@ -24,25 +23,18 @@ const App = () => (
         </Navbar.Brand>
       </Navbar.Header>
       <Nav>
-        <LinkContainer to="customers">
-          <NavItem eventKey={1}>Customers</NavItem>
-        </LinkContainer>
-        <LinkContainer to="chickens">
-          <NavItem eventKey={4}>Chickens</NavItem>
-        </LinkContainer>
-        <LinkContainer to="budget">
-          <NavItem eventKey={2}>Budget</NavItem>
-        </LinkContainer>
-        <LinkContainer to="reports">
-          <NavItem eventKey={3}>Reports</NavItem>
-        </LinkContainer>
+        {navLinks.map((link, idx) => (
+          <LinkContainer to={link.path}>
+            <NavItem eventKey={idx}>{link.label}</NavItem>
+          </LinkContainer>
+        ))}
       </Nav>
     </Navbar>
     <Route exact path="/" component={Home} />
-    <Route exact path="/customers" render={() => <div>Customers</div>} />
-    <Route exact path="/expenses" render={() => <div>Expenses</div>} />
-    <Route exact path="/charts" render={() => <div>Charts</div>} />
-    <Route exact path="/chickens" render={() => <div>Chickens</div>} />
+    <Route path="/customers" render={() => <div>Customers</div>} />
+    <Route path="/chickens" render={() => <div>Chickens</div>} />
+    <Route path="/budget" render={() => <div>Budget</div>} />
+    <Route path="/reports" render={() => <div>Reports</div>} />
   </div>
 );
 
