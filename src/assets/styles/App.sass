@@ -1,3 +1,21 @@
 @import "./_variables.scss"
 @import "./Bootstrap_overrides.sass"
 @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss"
+
+.App
+  height: 100vh
+
+.navbar
+  background: black
+  border-bottom: none
+  a
+    color: white !important
+  &:after
+    content: ''
+    height: 5px
+    width: 100%
+    background: $grad
+.well
+  background: white
+body
+  background: linear-gradient(0, #fafafa 0%, #eee 100%)

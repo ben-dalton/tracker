@@ -6,8 +6,9 @@ import Icon from 'react-icons-kit';
 import { ic_people_outline } from 'react-icons-kit/md/ic_people_outline';
 import { ic_attach_money } from 'react-icons-kit/md/ic_attach_money';
 import { ic_pie_chart_outlined } from 'react-icons-kit/md/ic_pie_chart_outlined';
-const chickenIcon = require('../assets/images/chicken.png');
+import * as colors from '../assets/styles/_variables.scss'
 
+const chickenIcon = require('../assets/images/chicken.png');
 
 const StyledWell = styled(Well)`
   width: 80%;
@@ -18,6 +19,10 @@ const StyledWell = styled(Well)`
 const StyledButton = styled(Button)`
   height: 50px;
   padding: 10px;
+  :hover {
+    background: #fafafa;
+    border-color: ${colors.blue}
+  }
 `;
 
 const BtnContentContainer = styled.div`

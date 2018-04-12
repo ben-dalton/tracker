@@ -1,37 +1,48 @@
 // Colors
-
-$yellow: #eecd32;
-
-$white: #ffffff;
-
-$blue: #377abc;
-
-$red: #d72233;
-
-$grey: #ebebeb;
-
-$darkgrey: #484848;
-
+$black: #303030;
+$blue: #48ded4;
+$purple: #262161;
+$yellow: #ffc40e;
+$pink: #ee7297;
+$green: #93ff00;
+$red: #e50714;
 $clear: rgba(0, 0, 0, 0);
-
-$transdarkgrey: rgba(72, 72, 72, 0.95);
+$grey: lighten(grey, 40%);
+$shad: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+$grad: linear-gradient(
+  90deg,
+  $blue 0%,
+  #a026bf 20%,
+  #e82c75 60%,
+  $yellow 85%,
+  $blue 95%
+);
+$verticalGrad: linear-gradient(
+  0,
+  $blue 0%,
+  #a026bf 20%,
+  #e82c75 60%,
+  $yellow 85%,
+  $blue 95%
+);
 
 // Breakpoints
-
 $screenxs: 480px;
 $screensm: 768px;
 $screenmd: 992px;
 $screenlg: 1200px;
 
 :export {
+  black: $black;
   blue: $blue;
-  red: $red;
-  white: $white;
+  purple: $purple;
   yellow: $yellow;
-  clear: $clear;
+  green: $green;
   grey: $grey;
-  darkgrey: $darkgrey;
-  transdarkgrey: $transdarkgrey;
+  red: $red;
+  shad: $shad;
+  grad: $grad;
+  verticalgrad: $verticalGrad;
   screenxs: $screenxs;
   screensm: $screensm;
   screenmd: $screenmd;
