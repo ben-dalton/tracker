@@ -1,89 +1,49 @@
 import React from 'react';
-import { Button, Well } from 'react-bootstrap';
+import { Route, Link } from 'react-router-dom';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import styled from 'styled-components';
-import Icon from 'react-icons-kit';
-import { ic_people_outline } from 'react-icons-kit/md/ic_people_outline';
-import { ic_attach_money } from 'react-icons-kit/md/ic_attach_money';
-import { ic_pie_chart_outlined } from 'react-icons-kit/md/ic_pie_chart_outlined';
-import * as colors from '../assets/styles/_variables.scss'
+import '../assets/styles/App.sass';
 
-const chickenIcon = require('../assets/images/chicken.png');
+import Home from './Home';
 
-const StyledWell = styled(Well)`
-  width: 80%;
-  max-width: 700px;
-  margin: 30px auto;
-`;
+const eggIcon = require('../assets/images/egg.svg');
 
-const StyledButton = styled(Button)`
-  height: 50px;
-  padding: 10px;
-  :hover {
-    background: #fafafa;
-    border-color: ${colors.blue}
-  }
-`;
-
-const BtnContentContainer = styled.div`
-  width: 160px;
-  margin: 0 auto;
-  position: relative
-  img {
-    position: absolute;
-    left: -2px;
-  }
-  span {
-    position: absolute;
-    left: 80px;
-    top: 3px;
-  }
-`;
-
-const StyledIcon = styled(Icon)`
-  position: absolute;
-  left: -2px;
-`
-
-const Home = () => (
-  <div>
-    <h1 className="text-center">Welcome to Tracker!</h1>
-    <h3 className="text-center">Let's get tracking</h3>
-    <StyledWell style={{ width: '80%', maxWidth: '700px' }}>
-      <LinkContainer to="customers">
-        <StyledButton bsSize="large" block>
-          <BtnContentContainer>
-            <StyledIcon size={32} icon={ic_people_outline} />
-            <span>Customers</span>
-          </BtnContentContainer>
-        </StyledButton>
-      </LinkContainer>
-      <LinkContainer to="expenses">
-        <StyledButton bsSize="large" block>
-          <BtnContentContainer>
-            <StyledIcon size={32} icon={ic_attach_money} />
-            <span>Expenses</span>
-          </BtnContentContainer>
-        </StyledButton>
-      </LinkContainer>
-      <LinkContainer to="charts">
-        <StyledButton bsSize="large" block>
-          <BtnContentContainer>
-            <StyledIcon size={32} icon={ic_pie_chart_outlined} />
-            <span>Charts</span>
-          </BtnContentContainer>
-        </StyledButton>
-      </LinkContainer>
-      <LinkContainer to="chickens">
-        <StyledButton bsSize="large" block>
-          <BtnContentContainer>
-            <img src={chickenIcon} alt="chicken" style={{width: '32px'}} />
-            <span>Chickens</span>
-          </BtnContentContainer>
-        </StyledButton>
-      </LinkContainer>
-    </StyledWell>
+const App = () => (
+  <div className="App">
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <Link to="/">
+            <img
+              src={eggIcon}
+              alt="egg"
+              style={{ display: 'inline', marginRight: '5px', width: '20px' }}
+            />
+            Tracker
+          </Link>
+        </Navbar.Brand>
+      </Navbar.Header>
+      <Nav>
+        <LinkContainer to="customers">
+          <NavItem eventKey={1}>Customers</NavItem>
+        </LinkContainer>
+        <LinkContainer to="chickens">
+          <NavItem eventKey={4}>Chickens</NavItem>
+        </LinkContainer>
+        <LinkContainer to="budget">
+          <NavItem eventKey={2}>Budget</NavItem>
+        </LinkContainer>
+        <LinkContainer to="reports">
+          <NavItem eventKey={3}>Reports</NavItem>
+        </LinkContainer>
+      </Nav>
+    </Navbar>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/customers" render={() => <div>Customers</div>} />
+    <Route exact path="/expenses" render={() => <div>Expenses</div>} />
+    <Route exact path="/charts" render={() => <div>Charts</div>} />
+    <Route exact path="/chickens" render={() => <div>Chickens</div>} />
   </div>
 );
 
-export default Home;
+export default App;
